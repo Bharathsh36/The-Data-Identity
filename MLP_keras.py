@@ -30,9 +30,9 @@ def get_model(input_shape, layers, dropout = 0.2, regularization = 1e-4):
         layer = Dense(layer_dim, activation = 'relu',
                       W_regularizer=l2(regularization),
                       b_regularizer=l2(regularization))(layer)
-        #layer = Dropout(dropout)(layer)
+        layer = Dropout(dropout)(layer)
     
-    layer = Dropout(dropout)(layer)
+    #layer = Dropout(dropout)(layer)
     result = Dense(1, activation = 'sigmoid')(layer)
 
 
